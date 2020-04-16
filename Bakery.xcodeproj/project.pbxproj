@@ -3,10 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		790F29A22444B4240048E8AD /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790F29A12444B4240048E8AD /* ApiClient.swift */; };
+		790F29A5244514770048E8AD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790F29A4244514770048E8AD /* BaseView.swift */; };
+		790F29A824451B1E0048E8AD /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790F29A724451B1E0048E8AD /* CustomNavigationController.swift */; };
+		790F29AA24451DB40048E8AD /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790F29A924451DB40048E8AD /* BaseRouter.swift */; };
+		79495E692448D3EC00E45764 /* TokenGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79495E682448D3EC00E45764 /* TokenGateway.swift */; };
+		79495E6B2448D46100E45764 /* TokenGatewayImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79495E6A2448D46100E45764 /* TokenGatewayImp.swift */; };
+		79495E702448DD8E00E45764 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79495E6F2448DD8E00E45764 /* R.generated.swift */; };
+		796226DD24462B8D002C8946 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226DC24462B8D002C8946 /* Backend.swift */; };
+		796226E024462ED1002C8946 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226DF24462ED1002C8946 /* String+.swift */; };
+		796226E2244634E4002C8946 /* SignInEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226E1244634E4002C8946 /* SignInEntity.swift */; };
+		796226E42448A8E6002C8946 /* BaseApiGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226E32448A8E6002C8946 /* BaseApiGateway.swift */; };
+		796226E62448A998002C8946 /* AuthGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226E52448A998002C8946 /* AuthGateway.swift */; };
+		796226E82448A9B3002C8946 /* SignUpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226E72448A9B3002C8946 /* SignUpEntity.swift */; };
+		796226EC2448AE4B002C8946 /* AuthResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226EB2448AE4B002C8946 /* AuthResponseEntity.swift */; };
+		796226EE2448AE7B002C8946 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226ED2448AE7B002C8946 /* UserEntity.swift */; };
+		796226F02448B00D002C8946 /* Bundle+Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226EF2448B00D002C8946 /* Bundle+Versions.swift */; };
+		796226F42448B28C002C8946 /* TokenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226F32448B28C002C8946 /* TokenEntity.swift */; };
+		796226F62448B703002C8946 /* AuthGatewayImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226F52448B703002C8946 /* AuthGatewayImp.swift */; };
 		797DC3762440802A0047A2BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DC3752440802A0047A2BE /* AppDelegate.swift */; };
 		797DC3782440802A0047A2BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DC3772440802A0047A2BE /* SceneDelegate.swift */; };
 		797DC37A2440802A0047A2BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DC3792440802A0047A2BE /* ViewController.swift */; };
@@ -14,9 +32,30 @@
 		797DC3802440802A0047A2BE /* Bakery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 797DC37E2440802A0047A2BE /* Bakery.xcdatamodeld */; };
 		797DC3822440802B0047A2BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797DC3812440802B0047A2BE /* Assets.xcassets */; };
 		797DC3852440802B0047A2BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797DC3832440802B0047A2BE /* LaunchScreen.storyboard */; };
+		C763F1768BDAD0E25B2E051D /* libPods-Bakery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEFF5C73B7A73C8A2F26539 /* libPods-Bakery.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DEFF5C73B7A73C8A2F26539 /* libPods-Bakery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bakery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		498149D673E81218D6C10109 /* Pods-Bakery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bakery.release.xcconfig"; path = "Target Support Files/Pods-Bakery/Pods-Bakery.release.xcconfig"; sourceTree = "<group>"; };
+		790F29A12444B4240048E8AD /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		790F29A4244514770048E8AD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		790F29A724451B1E0048E8AD /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		790F29A924451DB40048E8AD /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		79495E682448D3EC00E45764 /* TokenGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenGateway.swift; sourceTree = "<group>"; };
+		79495E6A2448D46100E45764 /* TokenGatewayImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenGatewayImp.swift; sourceTree = "<group>"; };
+		79495E6F2448DD8E00E45764 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		796226DC24462B8D002C8946 /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
+		796226DF24462ED1002C8946 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		796226E1244634E4002C8946 /* SignInEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEntity.swift; sourceTree = "<group>"; };
+		796226E32448A8E6002C8946 /* BaseApiGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiGateway.swift; sourceTree = "<group>"; };
+		796226E52448A998002C8946 /* AuthGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGateway.swift; sourceTree = "<group>"; };
+		796226E72448A9B3002C8946 /* SignUpEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEntity.swift; sourceTree = "<group>"; };
+		796226EB2448AE4B002C8946 /* AuthResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponseEntity.swift; sourceTree = "<group>"; };
+		796226ED2448AE7B002C8946 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		796226EF2448B00D002C8946 /* Bundle+Versions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Versions.swift"; sourceTree = "<group>"; };
+		796226F32448B28C002C8946 /* TokenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenEntity.swift; sourceTree = "<group>"; };
+		796226F52448B703002C8946 /* AuthGatewayImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayImp.swift; sourceTree = "<group>"; };
 		797DC3722440802A0047A2BE /* Bakery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bakery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		797DC3752440802A0047A2BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		797DC3772440802A0047A2BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +65,7 @@
 		797DC3812440802B0047A2BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		797DC3842440802B0047A2BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		797DC3862440802B0047A2BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCEFB52A5CB9470B8A0D042B /* Pods-Bakery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bakery.debug.xcconfig"; path = "Target Support Files/Pods-Bakery/Pods-Bakery.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +73,185 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C763F1768BDAD0E25B2E051D /* libPods-Bakery.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3047C9DA78871B5DBFB2FA14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DCEFB52A5CB9470B8A0D042B /* Pods-Bakery.debug.xcconfig */,
+				498149D673E81218D6C10109 /* Pods-Bakery.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		790B7C6224437DBF00738B32 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				790B7C6624437E1800738B32 /* Domain */,
+				790B7C6924437E6500738B32 /* Gateway */,
+				790B7C6724437E4300738B32 /* Use Case */,
+				790B7C6824437E5200738B32 /* App */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		790B7C6324437DC600738B32 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				79495E6F2448DD8E00E45764 /* R.generated.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		790B7C6424437DF300738B32 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				797DC3832440802B0047A2BE /* LaunchScreen.storyboard */,
+				797DC37B2440802A0047A2BE /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		790B7C6524437E0A00738B32 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				797DC3772440802A0047A2BE /* SceneDelegate.swift */,
+				797DC3752440802A0047A2BE /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		790B7C6624437E1800738B32 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				790B7C6B24437E7C00738B32 /* Entity */,
+				790B7C6C24437F2800738B32 /* Gateway */,
+				790B7C6A24437E7400738B32 /* Use Case */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		790B7C6724437E4300738B32 /* Use Case */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Use Case";
+			sourceTree = "<group>";
+		};
+		790B7C6824437E5200738B32 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				790B7C6D24437F3700738B32 /* Scene */,
+				790B7C6424437DF300738B32 /* Storyboards */,
+				790B7C6524437E0A00738B32 /* AppDelegate */,
+				790F29A3244514630048E8AD /* Supporting Classes */,
+				796226DE24462EB8002C8946 /* Extensions */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		790B7C6924437E6500738B32 /* Gateway */ = {
+			isa = PBXGroup;
+			children = (
+				790F29A6244518610048E8AD /* API */,
+				796226F52448B703002C8946 /* AuthGatewayImp.swift */,
+				79495E6A2448D46100E45764 /* TokenGatewayImp.swift */,
+			);
+			path = Gateway;
+			sourceTree = "<group>";
+		};
+		790B7C6A24437E7400738B32 /* Use Case */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Use Case";
+			sourceTree = "<group>";
+		};
+		790B7C6B24437E7C00738B32 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				796226E1244634E4002C8946 /* SignInEntity.swift */,
+				796226E72448A9B3002C8946 /* SignUpEntity.swift */,
+				796226ED2448AE7B002C8946 /* UserEntity.swift */,
+				796226F32448B28C002C8946 /* TokenEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		790B7C6C24437F2800738B32 /* Gateway */ = {
+			isa = PBXGroup;
+			children = (
+				796226E52448A998002C8946 /* AuthGateway.swift */,
+				79495E682448D3EC00E45764 /* TokenGateway.swift */,
+			);
+			path = Gateway;
+			sourceTree = "<group>";
+		};
+		790B7C6D24437F3700738B32 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		790F29A3244514630048E8AD /* Supporting Classes */ = {
+			isa = PBXGroup;
+			children = (
+				790F29A924451DB40048E8AD /* BaseRouter.swift */,
+				790F29A4244514770048E8AD /* BaseView.swift */,
+				790F29A724451B1E0048E8AD /* CustomNavigationController.swift */,
+			);
+			path = "Supporting Classes";
+			sourceTree = "<group>";
+		};
+		790F29A6244518610048E8AD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				796226E92448AE1D002C8946 /* Base */,
+				796226EA2448AE32002C8946 /* Entity */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		796226DE24462EB8002C8946 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				796226DF24462ED1002C8946 /* String+.swift */,
+				796226EF2448B00D002C8946 /* Bundle+Versions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		796226E92448AE1D002C8946 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				790F29A12444B4240048E8AD /* ApiClient.swift */,
+				796226DC24462B8D002C8946 /* Backend.swift */,
+				796226E32448A8E6002C8946 /* BaseApiGateway.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		796226EA2448AE32002C8946 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				796226EB2448AE4B002C8946 /* AuthResponseEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		797DC3692440802A0047A2BE = {
 			isa = PBXGroup;
 			children = (
 				797DC3742440802A0047A2BE /* Bakery */,
 				797DC3732440802A0047A2BE /* Products */,
+				3047C9DA78871B5DBFB2FA14 /* Pods */,
+				A91F28E6D80AD811651F21C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +266,22 @@
 		797DC3742440802A0047A2BE /* Bakery */ = {
 			isa = PBXGroup;
 			children = (
-				797DC3752440802A0047A2BE /* AppDelegate.swift */,
-				797DC3772440802A0047A2BE /* SceneDelegate.swift */,
+				790B7C6324437DC600738B32 /* Supporting Files */,
+				790B7C6224437DBF00738B32 /* Src */,
 				797DC3792440802A0047A2BE /* ViewController.swift */,
-				797DC37B2440802A0047A2BE /* Main.storyboard */,
 				797DC3812440802B0047A2BE /* Assets.xcassets */,
-				797DC3832440802B0047A2BE /* LaunchScreen.storyboard */,
 				797DC3862440802B0047A2BE /* Info.plist */,
 				797DC37E2440802A0047A2BE /* Bakery.xcdatamodeld */,
 			);
 			path = Bakery;
+			sourceTree = "<group>";
+		};
+		A91F28E6D80AD811651F21C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DEFF5C73B7A73C8A2F26539 /* libPods-Bakery.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +291,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 797DC3892440802B0047A2BE /* Build configuration list for PBXNativeTarget "Bakery" */;
 			buildPhases = (
+				824196A0DDD48AF15AEE489E /* [CP] Check Pods Manifest.lock */,
+				79495E6C2448DB8300E45764 /* ShellScript */,
 				797DC36E2440802A0047A2BE /* Sources */,
 				797DC36F2440802A0047A2BE /* Frameworks */,
 				797DC3702440802A0047A2BE /* Resources */,
+				8266D0C89FCB9657F5BB3E05 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +353,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		79495E6C2448DB8300E45764 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$SRCROOT/Bakery/Supporting Files/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Bakery/Supporting Files/R.generated.swift\"\n";
+		};
+		824196A0DDD48AF15AEE489E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bakery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8266D0C89FCB9657F5BB3E05 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bakery/Pods-Bakery-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bakery/Pods-Bakery-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bakery/Pods-Bakery-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		797DC36E2440802A0047A2BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -143,8 +421,26 @@
 			files = (
 				797DC37A2440802A0047A2BE /* ViewController.swift in Sources */,
 				797DC3802440802A0047A2BE /* Bakery.xcdatamodeld in Sources */,
+				796226E024462ED1002C8946 /* String+.swift in Sources */,
+				796226E62448A998002C8946 /* AuthGateway.swift in Sources */,
 				797DC3762440802A0047A2BE /* AppDelegate.swift in Sources */,
+				790F29A5244514770048E8AD /* BaseView.swift in Sources */,
+				796226F62448B703002C8946 /* AuthGatewayImp.swift in Sources */,
+				790F29A22444B4240048E8AD /* ApiClient.swift in Sources */,
+				796226EE2448AE7B002C8946 /* UserEntity.swift in Sources */,
+				79495E702448DD8E00E45764 /* R.generated.swift in Sources */,
+				796226EC2448AE4B002C8946 /* AuthResponseEntity.swift in Sources */,
+				796226F02448B00D002C8946 /* Bundle+Versions.swift in Sources */,
+				796226E2244634E4002C8946 /* SignInEntity.swift in Sources */,
+				79495E692448D3EC00E45764 /* TokenGateway.swift in Sources */,
+				796226F42448B28C002C8946 /* TokenEntity.swift in Sources */,
+				796226DD24462B8D002C8946 /* Backend.swift in Sources */,
 				797DC3782440802A0047A2BE /* SceneDelegate.swift in Sources */,
+				790F29A824451B1E0048E8AD /* CustomNavigationController.swift in Sources */,
+				796226E42448A8E6002C8946 /* BaseApiGateway.swift in Sources */,
+				79495E6B2448D46100E45764 /* TokenGatewayImp.swift in Sources */,
+				796226E82448A9B3002C8946 /* SignUpEntity.swift in Sources */,
+				790F29AA24451DB40048E8AD /* BaseRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,35 +582,47 @@
 		};
 		797DC38A2440802B0047A2BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCEFB52A5CB9470B8A0D042B /* Pods-Bakery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 54XGVND9K8;
 				INFOPLIST_FILE = Bakery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BakeryUnion.Bakery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		797DC38B2440802B0047A2BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 498149D673E81218D6C10109 /* Pods-Bakery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 54XGVND9K8;
 				INFOPLIST_FILE = Bakery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BakeryUnion.Bakery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
