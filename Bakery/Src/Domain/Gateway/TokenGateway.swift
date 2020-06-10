@@ -11,4 +11,5 @@ import Foundation
 protocol TokenGateway {
     
     var credentials: TokenEntity? { get set }
+    var constantApiKey: String { get }
 }

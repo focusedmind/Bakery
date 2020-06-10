@@ -34,6 +34,20 @@ class BaseApiClient<TargetService: TargetType>: ApiClient {
     func execute<ResponseType: Decodable>(request: TargetService) -> Single<ResponseType> {        
         return self.provider.rx.request(request)
             .filterSuccessfulStatusCodes()
+            //if received api error - we must map it to the ApiErrorEntity
+            .catchError({ [weak self] (error) -> Single<Response> in
+                if let moyaError = error as? MoyaError {
+                    switch moyaError {
+                    case .statusCode(let response):
+                        if let apiError = try? self?.jsonDecoder.decode(ApiErrorEntity.self, from: response.data) {
+                            return .error(apiError)
+                        }
+                    default:
+                        break
+                    }
+                }
+                return .error(error)
+            })
             .map { (response) -> ResponseType in
                 switch ResponseType.self {
                 case let rType where rType == String.self:
@@ -53,11 +67,12 @@ struct ApiClientFactory {
         let additionalHeaders = [
             "clientType": "ios",
             "appVersion": Bundle.main.versionNumber,
-            "locale": Locale.current.languageCode ?? "en"
+            "locale": Locale.current.languageCode ?? "en",
+            "apiKey": tokenGateway.constantApiKey
         ]
-        let authPlugin = AccessTokenPlugin { (authType) -> String in
-            return tokenGateway.credentials?.accessToken ?? ""
-        }
+//        let authPlugin = AccessTokenPlugin { (authType) -> String in
+//            return tokenGateway.credentials?.accessToken ?? ""
+//        }
         let jsonResponseDataFormatter = { (data: Data) -> String in
             do {
                 let dataAsJSON = try JSONSerialization.jsonObject(with: data)
@@ -70,6 +85,6 @@ struct ApiClientFactory {
         let loggingPlugin = NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: jsonResponseDataFormatter),
                                                                      logOptions: .default))
         return BaseApiClient<Backend>(additionalHeaders: additionalHeaders,
-                                      plugins: [authPlugin, loggingPlugin])
+                                      plugins: [loggingPlugin])//[authPlugin, loggingPlugin])
     }
 }

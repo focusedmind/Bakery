@@ -13,12 +13,13 @@ enum Backend {
     
     case signIn(credentials: SignInEntity)
     case test
+    case products(query: String, skip: Int, pageSize: Int)
 }
 
 
 extension Backend: TargetType {
     
-    public var baseURL: URL { return URL(string: "http://localhost")! }
+    public var baseURL: URL { return URL(string: "https://spoonacular.com")! }
     
     public var path: String {
         switch self {
@@ -26,6 +27,8 @@ extension Backend: TargetType {
             return "/login"
         case .test:
             return ""
+        case .products(_, _, _):
+            return "food/products/search"
         }
     }
     
@@ -44,6 +47,9 @@ extension Backend: TargetType {
             return .requestJSONEncodable(credentials)
         case .test:
             return .requestPlain
+        case .products(let query, let skip, let pageSize):
+            return .requestParameters(parameters: ["query": query, "skip": skip, "number": pageSize],
+                                      encoding: URLEncoding.queryString)
         }
     }
     
@@ -66,12 +72,15 @@ extension Backend: TargetType {
 
 extension Backend: AccessTokenAuthorizable {
     
+    /// API uses only static apiKey for auth as query string
     var authorizationType: AuthorizationType? {
-        switch self {
-        case .signIn(_), .test:
-            return .none
-        default:
-            return .bearer
-        }
+        
+        return .none
+//        switch self {
+//        case .signIn(_), .test:
+//            return .none
+//        default:
+//            return .bearer
+//        }
     }
 }

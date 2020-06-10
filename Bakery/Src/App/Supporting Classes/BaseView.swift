@@ -93,13 +93,13 @@ extension BaseView {
             let button = UIAlertAction(title: titles[i],
                                        style: UIAlertAction.Style.default,
                                        handler: { [i, actions] _ in actions[i]() })
-            button.setValue(#colorLiteral(red: 0.4860000014, green: 0.7179999948, blue: 0.3289999962, alpha: 1), forKey: "titleTextColor")
+//            button.setValue(#colorLiteral(red: 0.4860000014, green: 0.7179999948, blue: 0.3289999962, alpha: 1), forKey: "titleTextColor")
             sheet.addAction(button)
         }
         let cancelButton = UIAlertAction(title: "Cancel",
                                          style: UIAlertAction.Style.cancel,
                                          handler: nil)
-        cancelButton.setValue(#colorLiteral(red: 0.4860000014, green: 0.7179999948, blue: 0.3289999962, alpha: 1), forKey: "titleTextColor")
+//        cancelButton.setValue(#colorLiteral(red: 0.4860000014, green: 0.7179999948, blue: 0.3289999962, alpha: 1), forKey: "titleTextColor")
         sheet.addAction(cancelButton)
         (self as? UIViewController)?.present(sheet, animated: true)
     }
