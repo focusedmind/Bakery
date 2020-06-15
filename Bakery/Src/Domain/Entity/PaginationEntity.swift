@@ -8,18 +8,33 @@
 
 import Foundation
 
-protocol PaginationItem {
+protocol ApiPaginationItem: Decodable {
     
     static var itemsContainerCodingKey: String { get }
     static var totalCountCodingKey: String { get }
 }
 
-struct PaginationEntity<Element: PaginationItem> {
+struct PaginationEntity<Element> {
     
-    let items: [Element]
-    let totalCount: Int
-    let pageSize: Int
-    let skip: Int
+    var items: [Element]
+    var totalCount: Int
+    var pageSize: Int
+    var skip: Int
+    
+    mutating func update(with nextPage: Self) {
+        self.items.append(contentsOf: nextPage.items)
+        self.totalCount = nextPage.totalCount
+        self.pageSize = nextPage.pageSize
+        self.skip = nextPage.skip
+    }
+    
+    mutating func update<Transformable: TransformableEntity>(with nextPage: PaginationEntity<Transformable>)
+        where Transformable.CleanEntityType == Element {
+            self.items.append(contentsOf: nextPage.items.map({ $0.domainEntity }))
+            self.totalCount = nextPage.totalCount
+            self.pageSize = nextPage.pageSize
+            self.skip = nextPage.skip
+    }
 }
 
 //this is required because CodingKey for items and totalItems are dynamic and depends on the type of Element
@@ -33,7 +48,7 @@ fileprivate struct GenericCodingKeys: CodingKey {
 }
 
 
-extension PaginationEntity: Decodable where Element: Decodable {
+extension PaginationEntity: Decodable where Element: ApiPaginationItem  {
     
     fileprivate enum ConstantCodingKeys: String, CodingKey {
         case pageSize = "number"
@@ -50,6 +65,7 @@ extension PaginationEntity: Decodable where Element: Decodable {
                                          forKey: ConstantCodingKeys.skip.genericCodingKey)
         self.items = try container.decode([Element].self,
                                           forKey: GenericCodingKeys(stringValue: Element.itemsContainerCodingKey))
-        self.totalCount = try container.decode(Int.self, forKey: GenericCodingKeys(stringValue: Element.totalCountCodingKey))
+        self.totalCount = try container.decode(Int.self,
+                                               forKey: GenericCodingKeys(stringValue: Element.totalCountCodingKey))
     }
 }

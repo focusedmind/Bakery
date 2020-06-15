@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import KeychainAccess
 import RxSwift
 
-class AuthGatewayImp: BaseApiGateway<Backend>, AuthGateway {
+class ApiAuthGateway: BaseApiGateway<Backend>, AuthGateway {
         
     func signIn(credentials: SignInEntity) -> Single<AuthResponseEntity> {
         return self.client.execute(request: .signIn(credentials: credentials))

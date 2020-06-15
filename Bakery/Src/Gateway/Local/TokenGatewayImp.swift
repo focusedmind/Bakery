@@ -9,7 +9,6 @@
 import Foundation
 import KeychainAccess
 
-
 class TokenGatewaImp: TokenGateway {
     
     private let keychain = Keychain()

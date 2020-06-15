@@ -24,7 +24,7 @@
 		796226EE2448AE7B002C8946 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226ED2448AE7B002C8946 /* UserEntity.swift */; };
 		796226F02448B00D002C8946 /* Bundle+Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226EF2448B00D002C8946 /* Bundle+Versions.swift */; };
 		796226F42448B28C002C8946 /* TokenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226F32448B28C002C8946 /* TokenEntity.swift */; };
-		796226F62448B703002C8946 /* AuthGatewayImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226F52448B703002C8946 /* AuthGatewayImp.swift */; };
+		796226F62448B703002C8946 /* ApiAuthGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796226F52448B703002C8946 /* ApiAuthGateway.swift */; };
 		797DC3762440802A0047A2BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DC3752440802A0047A2BE /* AppDelegate.swift */; };
 		797DC3782440802A0047A2BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DC3772440802A0047A2BE /* SceneDelegate.swift */; };
 		797DC37A2440802A0047A2BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DC3792440802A0047A2BE /* ViewController.swift */; };
@@ -32,9 +32,14 @@
 		797DC3802440802A0047A2BE /* Bakery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 797DC37E2440802A0047A2BE /* Bakery.xcdatamodeld */; };
 		797DC3822440802B0047A2BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797DC3812440802B0047A2BE /* Assets.xcassets */; };
 		797DC3852440802B0047A2BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797DC3832440802B0047A2BE /* LaunchScreen.storyboard */; };
+		79820CBE2492CCA500D1EF29 /* ProductEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79820CBD2492CCA500D1EF29 /* ProductEntity.swift */; };
+		79820CC42492D65400D1EF29 /* PaginationGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79820CC32492D65400D1EF29 /* PaginationGateway.swift */; };
 		79A3E95C2490476F0000773D /* ApiErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3E95B2490476F0000773D /* ApiErrorEntity.swift */; };
 		79A3E95E24912AEC0000773D /* ApiProductEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3E95D24912AEC0000773D /* ApiProductEntity.swift */; };
 		79A3E96024912C8D0000773D /* PaginationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3E95F24912C8D0000773D /* PaginationEntity.swift */; };
+		79FF955424951CC8005734AF /* ApiProductsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF955324951CC8005734AF /* ApiProductsGateway.swift */; };
+		79FF955724952035005734AF /* PaginationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF955624952035005734AF /* PaginationUseCase.swift */; };
+		79FF9559249521C9005734AF /* PaginationUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FF9558249521C9005734AF /* PaginationUseCaseImp.swift */; };
 		C763F1768BDAD0E25B2E051D /* libPods-Bakery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEFF5C73B7A73C8A2F26539 /* libPods-Bakery.a */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +63,7 @@
 		796226ED2448AE7B002C8946 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		796226EF2448B00D002C8946 /* Bundle+Versions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Versions.swift"; sourceTree = "<group>"; };
 		796226F32448B28C002C8946 /* TokenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenEntity.swift; sourceTree = "<group>"; };
-		796226F52448B703002C8946 /* AuthGatewayImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthGatewayImp.swift; sourceTree = "<group>"; };
+		796226F52448B703002C8946 /* ApiAuthGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAuthGateway.swift; sourceTree = "<group>"; };
 		797DC3722440802A0047A2BE /* Bakery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bakery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		797DC3752440802A0047A2BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		797DC3772440802A0047A2BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,9 +73,14 @@
 		797DC3812440802B0047A2BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		797DC3842440802B0047A2BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		797DC3862440802B0047A2BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79820CBD2492CCA500D1EF29 /* ProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEntity.swift; sourceTree = "<group>"; };
+		79820CC32492D65400D1EF29 /* PaginationGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationGateway.swift; sourceTree = "<group>"; };
 		79A3E95B2490476F0000773D /* ApiErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorEntity.swift; sourceTree = "<group>"; };
 		79A3E95D24912AEC0000773D /* ApiProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProductEntity.swift; sourceTree = "<group>"; };
 		79A3E95F24912C8D0000773D /* PaginationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationEntity.swift; sourceTree = "<group>"; };
+		79FF955324951CC8005734AF /* ApiProductsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProductsGateway.swift; sourceTree = "<group>"; };
+		79FF955624952035005734AF /* PaginationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationUseCase.swift; sourceTree = "<group>"; };
+		79FF9558249521C9005734AF /* PaginationUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationUseCaseImp.swift; sourceTree = "<group>"; };
 		DCEFB52A5CB9470B8A0D042B /* Pods-Bakery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bakery.debug.xcconfig"; path = "Target Support Files/Pods-Bakery/Pods-Bakery.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +155,7 @@
 		790B7C6724437E4300738B32 /* Use Case */ = {
 			isa = PBXGroup;
 			children = (
+				79FF9558249521C9005734AF /* PaginationUseCaseImp.swift */,
 			);
 			path = "Use Case";
 			sourceTree = "<group>";
@@ -164,9 +175,8 @@
 		790B7C6924437E6500738B32 /* Gateway */ = {
 			isa = PBXGroup;
 			children = (
+				79FF955524951F02005734AF /* Local */,
 				790F29A6244518610048E8AD /* API */,
-				796226F52448B703002C8946 /* AuthGatewayImp.swift */,
-				79495E6A2448D46100E45764 /* TokenGatewayImp.swift */,
 			);
 			path = Gateway;
 			sourceTree = "<group>";
@@ -174,6 +184,7 @@
 		790B7C6A24437E7400738B32 /* Use Case */ = {
 			isa = PBXGroup;
 			children = (
+				79FF955624952035005734AF /* PaginationUseCase.swift */,
 			);
 			path = "Use Case";
 			sourceTree = "<group>";
@@ -186,6 +197,7 @@
 				796226ED2448AE7B002C8946 /* UserEntity.swift */,
 				796226F32448B28C002C8946 /* TokenEntity.swift */,
 				79A3E95F24912C8D0000773D /* PaginationEntity.swift */,
+				79820CBD2492CCA500D1EF29 /* ProductEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -195,6 +207,7 @@
 			children = (
 				796226E52448A998002C8946 /* AuthGateway.swift */,
 				79495E682448D3EC00E45764 /* TokenGateway.swift */,
+				79820CC32492D65400D1EF29 /* PaginationGateway.swift */,
 			);
 			path = Gateway;
 			sourceTree = "<group>";
@@ -221,6 +234,8 @@
 			children = (
 				796226E92448AE1D002C8946 /* Base */,
 				796226EA2448AE32002C8946 /* Entity */,
+				796226F52448B703002C8946 /* ApiAuthGateway.swift */,
+				79FF955324951CC8005734AF /* ApiProductsGateway.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -283,6 +298,22 @@
 				797DC37E2440802A0047A2BE /* Bakery.xcdatamodeld */,
 			);
 			path = Bakery;
+			sourceTree = "<group>";
+		};
+		79820CBF2492D1F200D1EF29 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		79FF955524951F02005734AF /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				79820CBF2492D1F200D1EF29 /* Database */,
+				79495E6A2448D46100E45764 /* TokenGatewayImp.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		A91F28E6D80AD811651F21C8 /* Frameworks */ = {
@@ -430,14 +461,17 @@
 			files = (
 				797DC37A2440802A0047A2BE /* ViewController.swift in Sources */,
 				797DC3802440802A0047A2BE /* Bakery.xcdatamodeld in Sources */,
+				79FF9559249521C9005734AF /* PaginationUseCaseImp.swift in Sources */,
 				796226E024462ED1002C8946 /* String+.swift in Sources */,
 				796226E62448A998002C8946 /* AuthGateway.swift in Sources */,
 				797DC3762440802A0047A2BE /* AppDelegate.swift in Sources */,
 				79A3E96024912C8D0000773D /* PaginationEntity.swift in Sources */,
+				79820CBE2492CCA500D1EF29 /* ProductEntity.swift in Sources */,
 				790F29A5244514770048E8AD /* BaseView.swift in Sources */,
-				796226F62448B703002C8946 /* AuthGatewayImp.swift in Sources */,
+				796226F62448B703002C8946 /* ApiAuthGateway.swift in Sources */,
 				790F29A22444B4240048E8AD /* ApiClient.swift in Sources */,
 				796226EE2448AE7B002C8946 /* UserEntity.swift in Sources */,
+				79FF955424951CC8005734AF /* ApiProductsGateway.swift in Sources */,
 				79A3E95E24912AEC0000773D /* ApiProductEntity.swift in Sources */,
 				79495E702448DD8E00E45764 /* R.generated.swift in Sources */,
 				796226EC2448AE4B002C8946 /* AuthResponseEntity.swift in Sources */,
@@ -447,12 +481,14 @@
 				796226F42448B28C002C8946 /* TokenEntity.swift in Sources */,
 				796226DD24462B8D002C8946 /* Backend.swift in Sources */,
 				797DC3782440802A0047A2BE /* SceneDelegate.swift in Sources */,
+				79820CC42492D65400D1EF29 /* PaginationGateway.swift in Sources */,
 				790F29A824451B1E0048E8AD /* CustomNavigationController.swift in Sources */,
 				796226E42448A8E6002C8946 /* BaseApiGateway.swift in Sources */,
 				79495E6B2448D46100E45764 /* TokenGatewayImp.swift in Sources */,
 				796226E82448A9B3002C8946 /* SignUpEntity.swift in Sources */,
 				79A3E95C2490476F0000773D /* ApiErrorEntity.swift in Sources */,
 				790F29AA24451DB40048E8AD /* BaseRouter.swift in Sources */,
+				79FF955724952035005734AF /* PaginationUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
