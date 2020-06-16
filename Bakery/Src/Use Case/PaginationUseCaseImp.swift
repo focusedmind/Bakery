@@ -24,6 +24,7 @@ class PaginationUseCaseImp<RemoteItemType: ApiEntityType>: PaginationUseCase {
     private var pageSize: Int
     private var query: String? = nil
     private var disposeBag = DisposeBag()
+    private var processingQueue = ConcurrentDispatchQueueScheduler(qos: .utility)
     
     var items: [RemoteItemType.CleanEntityType] { return paginatedItems.items }
     var numberOfItems: Int { return items.count }
@@ -34,7 +35,7 @@ class PaginationUseCaseImp<RemoteItemType: ApiEntityType>: PaginationUseCase {
         self.remoteGateway = remoteGateway
         self.eventPublisher = .init()
         self.pageSize = pageSize
-        self.paginatedItems = .init(items: [], totalCount: 0, pageSize: self.pageSize, skip: 0)
+        self.paginatedItems = .init(items: [], totalCount: 0, pageSize: self.pageSize, offset: 0)
     }
     
     func reloadItems(query: String? = nil) {
@@ -46,12 +47,16 @@ class PaginationUseCaseImp<RemoteItemType: ApiEntityType>: PaginationUseCase {
     @discardableResult
     func loadNextPage() -> Bool {
         guard self.hasMoreUnloadedItems else { return false }
-        self.loadItems(offset: self.numberOfItems)
+        if !self.isLoadingItems {
+            self.loadItems(offset: self.numberOfItems)
+        }
         return true
     }
     
     private func loadItems(offset: Int = 0)  {
         self.remoteGateway.loadItems(offset: offset, pageSize: self.pageSize, query: self.query)
+            .subscribeOn(self.processingQueue)
+            .observeOn(self.processingQueue)
             .do(afterSuccess: { [weak self] result in self?.publishLoadedItems(with: offset,
                                                                                loadedItems: result.items)},
                 onSubscribe: { [weak self] in self?.isLoadingItems = true },
@@ -62,8 +67,9 @@ class PaginationUseCaseImp<RemoteItemType: ApiEntityType>: PaginationUseCase {
                     self.paginatedItems.items.removeAll()
                 }
                 self.paginatedItems.update(with: result)
-            }, onError: { [weak self] error in self?.eventPublisher.onError(error) })
-            .disposed(by: self.disposeBag)
+            }, onError: { [weak self] error in
+                self?.eventPublisher.onNext(.errorReceived(error: error))
+            }).disposed(by: self.disposeBag)
 
     }
     
@@ -85,6 +91,6 @@ class PaginationUseCaseImp<RemoteItemType: ApiEntityType>: PaginationUseCase {
     }
     
     private func initializePaginatedItems() {
-        self.paginatedItems = .init(items: [], totalCount: 0, pageSize: self.pageSize, skip: 0)
+        self.paginatedItems = .init(items: [], totalCount: 0, pageSize: self.pageSize, offset: 0)
     }
 }

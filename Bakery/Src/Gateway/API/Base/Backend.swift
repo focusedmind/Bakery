@@ -13,13 +13,16 @@ enum Backend {
     
     case signIn(credentials: SignInEntity)
     case test
-    case products(query: String, skip: Int, pageSize: Int)
+    case products(query: String, offset: Int, pageSize: Int)
 }
 
 
 extension Backend: TargetType {
     
-    public var baseURL: URL { return URL(string: "https://spoonacular.com")! }
+    public var baseURL: URL { return URL(string: "https://api.spoonacular.com")! }
+    
+    //temp solution until spoonacular API get normal auth via headers
+    private var tokenGateway: TokenGateway { return  TokenGatewaImp.default }
     
     public var path: String {
         switch self {
@@ -47,8 +50,10 @@ extension Backend: TargetType {
             return .requestJSONEncodable(credentials)
         case .test:
             return .requestPlain
-        case .products(let query, let skip, let pageSize):
-            return .requestParameters(parameters: ["query": query, "skip": skip, "number": pageSize],
+        case .products(let query, let offset, let pageSize):
+            return .requestParameters(parameters: ["query": query,
+                                                   "offset": offset, "number": pageSize,
+                                                   "apiKey": tokenGateway.constantApiKey],
                                       encoding: URLEncoding.queryString)
         }
     }

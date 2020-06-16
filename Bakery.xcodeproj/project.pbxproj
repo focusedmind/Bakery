@@ -21,6 +21,7 @@
 		792CA1142499278F0084AF52 /* ItemsListUpdateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CA1132499278F0084AF52 /* ItemsListUpdateEvent.swift */; };
 		792CA116249930490084AF52 /* ProductsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CA115249930490084AF52 /* ProductsConfigurator.swift */; };
 		792CA118249930800084AF52 /* ProductsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CA117249930800084AF52 /* ProductsRouter.swift */; };
+		792CA11B2499362F0084AF52 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CA11A2499362F0084AF52 /* LaunchViewController.swift */; };
 		79495E692448D3EC00E45764 /* TokenGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79495E682448D3EC00E45764 /* TokenGateway.swift */; };
 		79495E6B2448D46100E45764 /* TokenGatewayImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79495E6A2448D46100E45764 /* TokenGatewayImp.swift */; };
 		79495E702448DD8E00E45764 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79495E6F2448DD8E00E45764 /* R.generated.swift */; };
@@ -70,6 +71,7 @@
 		792CA1132499278F0084AF52 /* ItemsListUpdateEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListUpdateEvent.swift; sourceTree = "<group>"; };
 		792CA115249930490084AF52 /* ProductsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsConfigurator.swift; sourceTree = "<group>"; };
 		792CA117249930800084AF52 /* ProductsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRouter.swift; sourceTree = "<group>"; };
+		792CA11A2499362F0084AF52 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		79495E682448D3EC00E45764 /* TokenGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenGateway.swift; sourceTree = "<group>"; };
 		79495E6A2448D46100E45764 /* TokenGatewayImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenGatewayImp.swift; sourceTree = "<group>"; };
 		79495E6F2448DD8E00E45764 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		790B7C6D24437F3700738B32 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				792CA1192499360A0084AF52 /* Launch */,
 				792CA1012497A8950084AF52 /* Products */,
 			);
 			path = Scene;
@@ -292,6 +295,14 @@
 				792CA10624980BC40084AF52 /* ProductsListCVHeaderEntity.swift */,
 			);
 			path = "View Entities";
+			sourceTree = "<group>";
+		};
+		792CA1192499360A0084AF52 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				792CA11A2499362F0084AF52 /* LaunchViewController.swift */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		796226DE24462EB8002C8946 /* Extensions */ = {
@@ -545,6 +556,7 @@
 				790F29A824451B1E0048E8AD /* CustomNavigationController.swift in Sources */,
 				796226E42448A8E6002C8946 /* BaseApiGateway.swift in Sources */,
 				79495E6B2448D46100E45764 /* TokenGatewayImp.swift in Sources */,
+				792CA11B2499362F0084AF52 /* LaunchViewController.swift in Sources */,
 				796226E82448A9B3002C8946 /* SignUpEntity.swift in Sources */,
 				79A3E95C2490476F0000773D /* ApiErrorEntity.swift in Sources */,
 				790F29AA24451DB40048E8AD /* BaseRouter.swift in Sources */,

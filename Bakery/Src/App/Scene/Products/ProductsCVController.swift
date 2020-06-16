@@ -21,9 +21,10 @@ class ProductsCVController: UICollectionViewController, BaseView {
     
     // MARK: Computed properties
     fileprivate var numberOfItemsInLine: Int {
-        return self.view.frame.height > self.view.frame.width ? 2 : 3
+        return self.view.frame.height > self.view.frame.width ? 2 : 4
     }
     fileprivate var sizingView: ProductsCVCell!
+    fileprivate var sizingViewWidthConstraint: NSLayoutConstraint!
     
     fileprivate static let productsCVCellReuseIdentifier = "productCVCell"
     
@@ -35,11 +36,21 @@ class ProductsCVController: UICollectionViewController, BaseView {
             layout.estimatedItemSize = .zero
         }
         self.sizingView = R.nib.productsCellXibView(owner: nil)
+        self.sizingViewWidthConstraint = self.sizingView.widthAnchor.constraint(equalToConstant: self.itemWidth)
+        self.sizingViewWidthConstraint.isActive = true
         self.collectionView.register(UINib(resource: R.nib.productsCellXibView),
                                      forCellWithReuseIdentifier: Self.productsCVCellReuseIdentifier)
         self.collectionView.alwaysBounceVertical = true
         self.collectionView.refreshControl = self.refreshControl
         self.collectionView.refreshControl!.beginRefreshing()
+        self.presenter.onViewDidLoad()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { [weak self] _ in
+            self?.handleTransitionToNewSize()
+        }, completion: nil)
     }
     
     @objc private func onRefreshPulled(_ sender: UIRefreshControl) {
@@ -61,6 +72,7 @@ class ProductsCVController: UICollectionViewController, BaseView {
     
     fileprivate func handleTransitionToNewSize() {
         self.itemWidth = self.getItemWidth()
+        self.sizingViewWidthConstraint.constant = self.itemWidth
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.collectionViewLayout.invalidateLayout()
         }
@@ -95,7 +107,9 @@ extension ProductsCVController {
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                          withReuseIdentifier: R.reuseIdentifier.productsCVFooterReusableView,
                                                                          for: indexPath)!
-            footer.setup(isAnimating: self.presenter.isLoadingItems)
+            self.presenter.viwWillDisplaySupplementaryView(at: indexPath, kind: kind)
+            let isLoadingIndicatorVisible = self.presenter.isLoadingItems && !self.refreshControl.isRefreshing
+            footer.setup(isAnimating: isLoadingIndicatorVisible)
             return footer
         } 
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
@@ -107,12 +121,6 @@ extension ProductsCVController {
         return headerView
     }
     
-    override func collectionView(_ collectionView: UICollectionView,
-                                 willDisplaySupplementaryView view: UICollectionReusableView,
-                                 forElementKind elementKind: String,
-                                 at indexPath: IndexPath) {
-        self.presenter.viwWillDisplaySupplementaryView(at: indexPath, kind: elementKind)
-    }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
@@ -150,7 +158,7 @@ extension ProductsCVController: UICollectionViewDelegateFlowLayout {
         self.sizingView.setup(entity)
         self.sizingView.setNeedsLayout()
         self.sizingView.layoutIfNeeded()
-        let desiredSize = CGSize(width: self.itemWidth, height: UIView.layoutFittingCompressedSize.height)
+        let desiredSize = CGSize(width: self.itemWidth, height: UIView.layoutFittingExpandedSize.height)
         let size = sizingView.systemLayoutSizeFitting(desiredSize,
                                                       withHorizontalFittingPriority: .required,
                                                       verticalFittingPriority: .fittingSizeLevel)
@@ -194,14 +202,20 @@ extension ProductsCVController: ProductsView {
     }
     
     func handleItemsListUpdate(_ event: ItemsListUpdateEvent) {
-        switch event {
-        case .append(let indices):
-            self.collectionView.insertItems(at: indices)
-        case .remove(let indices):
-            self.collectionView.deleteItems(at: indices)
-        case .update(let indices):
-            self.collectionView.reloadItems(at: indices)
-        }
+        self.collectionView.performBatchUpdates({ [weak self] in
+            switch event {
+            case .append(let indices):
+                self?.collectionView.insertItems(at: indices)
+            case .remove(let indices):
+                self?.collectionView.deleteItems(at: indices)
+            case .update(let indices):
+                self?.collectionView.reloadItems(at: indices)
+            }
+        })
+    }
+    
+    func endRefreshing() {
+        self.refreshControl.endRefreshing()
     }
 }
 

@@ -38,6 +38,7 @@ enum PagationUseCaseEvent<Element> {
     case itemsLoaded(items: [Element])
     case nextPageLoaded(items: [Element], pageRange: Range<Int>)
     case emptyMessageReceived
+    case errorReceived(error: Error)
 }
 
 enum DataSourceKind {

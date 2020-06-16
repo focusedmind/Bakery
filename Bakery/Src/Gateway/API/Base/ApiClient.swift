@@ -82,9 +82,15 @@ struct ApiClientFactory {
                 return String(data: data, encoding: .utf8) ?? ""
             }
         }
-        let loggingPlugin = NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: jsonResponseDataFormatter),
-                                                                     logOptions: .default))
+
+        var plugins = [PluginType]() //[authPlugin]
+        if ProcessInfo.processInfo.arguments.contains("IS_NETWORK_LOGGING_ENABLED") {
+            let networkLoggingConfig = NetworkLoggerPlugin.Configuration(formatter: .init(responseData: jsonResponseDataFormatter),
+                                                                         logOptions: .default)
+            plugins.append(NetworkLoggerPlugin(configuration: networkLoggingConfig))
+            
+        }
         return BaseApiClient<Backend>(additionalHeaders: additionalHeaders,
-                                      plugins: [loggingPlugin])//[authPlugin, loggingPlugin])
+                                      plugins: plugins)
     }
 }

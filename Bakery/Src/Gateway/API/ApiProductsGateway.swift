@@ -12,6 +12,6 @@ import RxSwift
 class ApiProductsGateway: BaseApiPaginationGateway<ApiProductEntity> {
     
     override func loadItems(offset: Int, pageSize: Int, query: String?) -> Single<PaginationEntity<ApiProductEntity>> {
-        return self.client.execute(request: .products(query: query ?? "", skip: offset, pageSize: pageSize))
+        return self.client.execute(request: .products(query: query ?? "", offset: offset, pageSize: pageSize))
     }
 }

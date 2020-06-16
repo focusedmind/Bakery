@@ -19,13 +19,13 @@ struct PaginationEntity<Element> {
     var items: [Element]
     var totalCount: Int
     var pageSize: Int
-    var skip: Int
+    var offset: Int
     
     mutating func update(with nextPage: Self) {
         self.items.append(contentsOf: nextPage.items)
         self.totalCount = nextPage.totalCount
         self.pageSize = nextPage.pageSize
-        self.skip = nextPage.skip
+        self.offset = nextPage.offset
     }
     
     mutating func update<Transformable: TransformableEntity>(with nextPage: PaginationEntity<Transformable>)
@@ -33,7 +33,7 @@ struct PaginationEntity<Element> {
             self.items.append(contentsOf: nextPage.items.map({ $0.domainEntity }))
             self.totalCount = nextPage.totalCount
             self.pageSize = nextPage.pageSize
-            self.skip = nextPage.skip
+            self.offset = nextPage.offset
     }
 }
 
@@ -52,7 +52,7 @@ extension PaginationEntity: Decodable where Element: ApiPaginationItem  {
     
     fileprivate enum ConstantCodingKeys: String, CodingKey {
         case pageSize = "number"
-        case skip
+        case offset
         
         var genericCodingKey: GenericCodingKeys { return GenericCodingKeys(stringValue: self.rawValue) }
     }
@@ -61,8 +61,8 @@ extension PaginationEntity: Decodable where Element: ApiPaginationItem  {
         let container = try decoder.container(keyedBy: GenericCodingKeys.self)
         self.pageSize = try container.decode(Int.self,
                                              forKey: ConstantCodingKeys.pageSize.genericCodingKey)
-        self.skip = try container.decode(Int.self,
-                                         forKey: ConstantCodingKeys.skip.genericCodingKey)
+        self.offset = try container.decode(Int.self,
+                                         forKey: ConstantCodingKeys.offset.genericCodingKey)
         self.items = try container.decode([Element].self,
                                           forKey: GenericCodingKeys(stringValue: Element.itemsContainerCodingKey))
         self.totalCount = try container.decode(Int.self,

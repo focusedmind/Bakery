@@ -8,13 +8,11 @@
 
 import Foundation
 
-struct ApiErrorEntity: Error, Codable {
+struct ApiErrorEntity: LocalizedError, Codable {
     
     let message: String
     let status: String
     let code: Int
     
-    var localizedDescription: String {
-        return message
-    }
+    var errorDescription: String? { return message }
 }
