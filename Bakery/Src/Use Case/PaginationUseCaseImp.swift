@@ -43,6 +43,7 @@ class PaginationUseCaseImp<RemoteItemType: ApiEntityType>: PaginationUseCase {
         self.loadItems()
     }
     
+    @discardableResult
     func loadNextPage() -> Bool {
         guard self.hasMoreUnloadedItems else { return false }
         self.loadItems(offset: self.numberOfItems)

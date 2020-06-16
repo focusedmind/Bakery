@@ -8,6 +8,9 @@ PODS:
   - FTIndicator/FTProgressIndicator (1.2.9)
   - FTIndicator/FTToastIndicator (1.2.9)
   - KeychainAccess (4.1.0)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -24,6 +27,7 @@ PODS:
 DEPENDENCIES:
   - FTIndicator
   - KeychainAccess
+  - Kingfisher (~> 5.0)
   - Moya
   - Moya/RxSwift
   - R.swift
@@ -35,6 +39,7 @@ SPEC REPOS:
     - Alamofire
     - FTIndicator
     - KeychainAccess
+    - Kingfisher
     - Moya
     - R.swift
     - R.swift.Library
@@ -45,12 +50,13 @@ SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   FTIndicator: f7f071fd159e5befa1d040a9ef2e3ab53fa9322c
   KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
-PODFILE CHECKSUM: ce828f8e90d2b8d065cddd9628e01bca39e17891
+PODFILE CHECKSUM: 6f762a92d9fe5493b7e23737127ecb8f417744df
 
 COCOAPODS: 1.9.1

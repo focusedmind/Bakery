@@ -19,8 +19,8 @@ protocol ApiClient {
 
 class BaseApiClient<TargetService: TargetType>: ApiClient {
     
-    internal let provider: MoyaProvider<TargetService>
-    internal let jsonDecoder = JSONDecoder()
+    fileprivate let provider: MoyaProvider<TargetService>
+    fileprivate let jsonDecoder = JSONDecoder()
     
     init(additionalHeaders: [String : String] = [:],
          plugins: [PluginType] = []) {
@@ -67,8 +67,8 @@ struct ApiClientFactory {
         let additionalHeaders = [
             "clientType": "ios",
             "appVersion": Bundle.main.versionNumber,
-            "locale": Locale.current.languageCode ?? "en",
-            "apiKey": tokenGateway.constantApiKey
+            "locale": Locale.current.languageCode ?? "en"
+//            "apiKey": tokenGateway.constantApiKey
         ]
 //        let authPlugin = AccessTokenPlugin { (authType) -> String in
 //            return tokenGateway.credentials?.accessToken ?? ""

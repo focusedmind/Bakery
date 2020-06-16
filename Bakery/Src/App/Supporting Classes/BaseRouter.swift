@@ -13,6 +13,7 @@ protocol BaseRouter {
     
     var view: UIViewController! { get }
     
+    init(_ view: UIViewController)
     func close()
     func closeToRoot()
 }

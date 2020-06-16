@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import Kingfisher
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -77,6 +79,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    fileprivate func configureImageCache() {
+        let cache = ImageCache.default
+        cache.memoryStorage.config.totalCostLimit = 50 * 1024 * 1024
+        cache.memoryStorage.config.countLimit = 10
+        cache.memoryStorage.config.expiration = .never
+        cache.diskStorage.config.sizeLimit = 1000 * 1024 * 1024
+        cache.diskStorage.config.expiration = .days(7)
     }
 
 }

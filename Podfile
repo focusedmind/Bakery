@@ -9,6 +9,7 @@ target 'Bakery' do
   
   # General
   pod 'KeychainAccess'
+  pod 'Kingfisher', '~> 5.0'
   pod 'R.swift'
   pod 'RxSwift'
   
