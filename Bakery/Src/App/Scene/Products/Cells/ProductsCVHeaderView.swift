@@ -60,8 +60,8 @@ extension ProductsCVHeaderView: ProductsCVHeader {
     
     func updateState(_ newConfig: ProductsListCVHeaderEntity, shouldReveal: Bool) {
         let transformAngle = newConfig.isRevealed ? 0 : -CGFloat.pi/2
-        UIView.animate(withDuration: 0.4) { [weak self] in
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: { [weak self] in
             self?.sectionTitleImageView.transform = CGAffineTransform(rotationAngle: transformAngle)
-        }
+        })
     }
 }

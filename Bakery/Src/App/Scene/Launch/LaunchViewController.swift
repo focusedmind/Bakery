@@ -32,7 +32,7 @@ class LaunchViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut, animations: {
             self.imageView.alpha = 1
         }) { _ in
             self.perform(#selector(self.openProductsScene), with: nil, afterDelay: 0.3)
