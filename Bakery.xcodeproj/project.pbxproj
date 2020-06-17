@@ -95,6 +95,7 @@
 		79820CBD2492CCA500D1EF29 /* ProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEntity.swift; sourceTree = "<group>"; };
 		79820CC32492D65400D1EF29 /* PaginationGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationGateway.swift; sourceTree = "<group>"; };
 		7998D8BC249AC1F500410774 /* PaginationEntity+ApiPaginationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PaginationEntity+ApiPaginationItem.swift"; sourceTree = "<group>"; };
+		7998D8BE249ACDD800410774 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		79A3E95B2490476F0000773D /* ApiErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorEntity.swift; sourceTree = "<group>"; };
 		79A3E95D24912AEC0000773D /* ApiProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProductEntity.swift; sourceTree = "<group>"; };
 		79A3E95F24912C8D0000773D /* PaginationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationEntity.swift; sourceTree = "<group>"; };
@@ -338,6 +339,7 @@
 		797DC3692440802A0047A2BE = {
 			isa = PBXGroup;
 			children = (
+				7998D8BE249ACDD800410774 /* README.md */,
 				797DC3742440802A0047A2BE /* Bakery */,
 				797DC3732440802A0047A2BE /* Products */,
 				3047C9DA78871B5DBFB2FA14 /* Pods */,
