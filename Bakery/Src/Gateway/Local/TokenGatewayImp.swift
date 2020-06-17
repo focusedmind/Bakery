@@ -40,7 +40,7 @@ class TokenGatewaImp: TokenGateway {
     }
     
     // temp solution due to lack of normal auth on spoonacular API.
-    var constantApiKey: String { return "afd19d44b0104b38bb999ab9d7d65dc6" }
+    var constantApiKey: String { return "a36796cfa78f4227ab2af595e73e97af" }
     
     static var `default`: TokenGateway = {
         return TokenGatewaImp()
