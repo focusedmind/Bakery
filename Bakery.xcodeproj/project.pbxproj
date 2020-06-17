@@ -39,7 +39,6 @@
 		797DC3762440802A0047A2BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DC3752440802A0047A2BE /* AppDelegate.swift */; };
 		797DC3782440802A0047A2BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797DC3772440802A0047A2BE /* SceneDelegate.swift */; };
 		797DC37D2440802A0047A2BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797DC37B2440802A0047A2BE /* Main.storyboard */; };
-		797DC3802440802A0047A2BE /* Bakery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 797DC37E2440802A0047A2BE /* Bakery.xcdatamodeld */; };
 		797DC3822440802B0047A2BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797DC3812440802B0047A2BE /* Assets.xcassets */; };
 		797DC3852440802B0047A2BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797DC3832440802B0047A2BE /* LaunchScreen.storyboard */; };
 		79820CBE2492CCA500D1EF29 /* ProductEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79820CBD2492CCA500D1EF29 /* ProductEntity.swift */; };
@@ -90,7 +89,6 @@
 		797DC3752440802A0047A2BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		797DC3772440802A0047A2BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		797DC37C2440802A0047A2BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		797DC37F2440802A0047A2BE /* Bakery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bakery.xcdatamodel; sourceTree = "<group>"; };
 		797DC3812440802B0047A2BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		797DC3842440802B0047A2BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		797DC3862440802B0047A2BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,7 +139,9 @@
 		790B7C6324437DC600738B32 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				797DC3812440802B0047A2BE /* Assets.xcassets */,
 				79495E6F2448DD8E00E45764 /* R.generated.swift */,
+				797DC3862440802B0047A2BE /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -358,9 +358,6 @@
 			children = (
 				790B7C6324437DC600738B32 /* Supporting Files */,
 				790B7C6224437DBF00738B32 /* Src */,
-				797DC3812440802B0047A2BE /* Assets.xcassets */,
-				797DC3862440802B0047A2BE /* Info.plist */,
-				797DC37E2440802A0047A2BE /* Bakery.xcdatamodeld */,
 			);
 			path = Bakery;
 			sourceTree = "<group>";
@@ -525,7 +522,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				797DC3802440802A0047A2BE /* Bakery.xcdatamodeld in Sources */,
 				79FF9559249521C9005734AF /* PaginationUseCaseImp.swift in Sources */,
 				7998D8BD249AC1F500410774 /* PaginationEntity+ApiPaginationItem.swift in Sources */,
 				796226E024462ED1002C8946 /* String+.swift in Sources */,
@@ -713,7 +709,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54XGVND9K8;
-				INFOPLIST_FILE = Bakery/Info.plist;
+				INFOPLIST_FILE = "Bakery/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -738,7 +734,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54XGVND9K8;
-				INFOPLIST_FILE = Bakery/Info.plist;
+				INFOPLIST_FILE = "Bakery/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -776,19 +772,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		797DC37E2440802A0047A2BE /* Bakery.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				797DC37F2440802A0047A2BE /* Bakery.xcdatamodel */,
-			);
-			currentVersion = 797DC37F2440802A0047A2BE /* Bakery.xcdatamodel */;
-			path = Bakery.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 797DC36A2440802A0047A2BE /* Project object */;
 }
