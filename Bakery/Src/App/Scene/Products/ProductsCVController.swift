@@ -159,7 +159,7 @@ extension ProductsCVController: UICollectionViewDelegateFlowLayout {
                                              viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader,
                                              at: indexPath)
         // Use this view to calculate the optimal size based on the collection view's width
-        let size = headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingCompressedSize.height),
+        let size = headerView.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height),
                                                         withHorizontalFittingPriority: .required, // Width is fixed
                                                         verticalFittingPriority: .fittingSizeLevel) // Height can be as large as needed
         return size
@@ -186,9 +186,6 @@ extension ProductsCVController: UICollectionViewDelegateFlowLayout {
         let size = sizingView.systemLayoutSizeFitting(desiredSize,
                                                       withHorizontalFittingPriority: .required,
                                                       verticalFittingPriority: .fittingSizeLevel)
-        print("sizingView.size: \(sizingView.frame.size)")
-        print("usedSize: \(size)")
-        print("####################################")
         return size
     }
     
