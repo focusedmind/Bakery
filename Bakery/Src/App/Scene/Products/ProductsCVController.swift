@@ -17,14 +17,14 @@ class ProductsCVController: UICollectionViewController, BaseView {
         return result
     }()
     // MARK: Variables
-    fileprivate lazy var itemWidth: CGFloat = { return self.getItemWidth() }()
+    fileprivate var itemWidth: CGFloat!
     
     // MARK: Computed properties
-    fileprivate var numberOfItemsInLine: Int {
-        return self.view.frame.height > self.view.frame.width ? 2 : 4
-    }
+    fileprivate var numberOfItemsInLine: Int!
     fileprivate var sizingView: ProductsCVCell!
+    fileprivate var superViewOfSizingView: UIView!
     fileprivate var sizingViewWidthConstraint: NSLayoutConstraint!
+    fileprivate var sizingViewHeightConsraint: NSLayoutConstraint!
     
     fileprivate static let productsCVCellReuseIdentifier = "productCVCell"
     
@@ -36,14 +36,14 @@ class ProductsCVController: UICollectionViewController, BaseView {
             layout.estimatedItemSize = .zero
         }
         self.sizingView = R.nib.productsCellXibView(owner: nil)
-        self.sizingViewWidthConstraint = self.sizingView.widthAnchor.constraint(equalToConstant: self.itemWidth)
-        self.sizingViewWidthConstraint.isActive = true
+        self.updateSizingViewConstraint()
         self.collectionView.register(UINib(resource: R.nib.productsCellXibView),
                                      forCellWithReuseIdentifier: Self.productsCVCellReuseIdentifier)
         self.collectionView.alwaysBounceVertical = true
         self.collectionView.refreshControl = self.refreshControl
         self.collectionView.refreshControl!.beginRefreshing()
         self.presenter.onViewDidLoad()
+
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -58,21 +58,45 @@ class ProductsCVController: UICollectionViewController, BaseView {
     }
     
     
+    fileprivate func updateSizingViewConstraint() {
+        // because UIDevice.current.orientation.isLandscapse sucks on startup
+        let isLandscape = self.view.frame.height < self.view.frame.width
+        let horizontalSizeClass = self.traitCollection.horizontalSizeClass
+        if horizontalSizeClass == .regular {
+            self.numberOfItemsInLine = isLandscape ? 6 : 4
+        } else {
+            self.numberOfItemsInLine = isLandscape ? 4 : 2
+        }
+        self.updateItemWidth()
+        if self.sizingViewWidthConstraint == nil {
+            self.sizingViewWidthConstraint = self.sizingView.widthAnchor.constraint(equalToConstant: self.itemWidth)
+        } else {
+            self.sizingViewWidthConstraint.constant = self.itemWidth
+        }
+        if self.sizingViewHeightConsraint == nil {
+            self.sizingViewHeightConsraint = self.sizingView.heightAnchor.constraint(lessThanOrEqualToConstant: 1.6 * self.itemWidth)
+        } else {
+            self.sizingViewHeightConsraint.constant = 1.6 * self.itemWidth
+        }
+        let constraintsToActivate = [self.sizingViewWidthConstraint!, self.sizingViewHeightConsraint]
+            .filter({ !$0.isActive })
+        NSLayoutConstraint.activate(constraintsToActivate)
+    }
+    
     /// Calculates item width for all cells based on  current orientation and CollectionVIewLayout properties
     /// - Returns: width of all cells
-    fileprivate func getItemWidth() -> CGFloat {
+    fileprivate func updateItemWidth()  {
         let itemCountInLine = CGFloat(self.numberOfItemsInLine)
         let currentLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let interItemSpacing = currentLayout.minimumInteritemSpacing
         let sectionTotalHorizontalInset = currentLayout.sectionInset.left + currentLayout.sectionInset.right
         let safeAreaTotalInsets = self.view.safeAreaInsets.left + self.view.safeAreaInsets.right
         let lineWidthWithoutIndentAndInsets = self.collectionView.frame.width - safeAreaTotalInsets - (itemCountInLine - 1) * interItemSpacing - sectionTotalHorizontalInset - 4
-        return lineWidthWithoutIndentAndInsets / itemCountInLine
+        self.itemWidth = lineWidthWithoutIndentAndInsets / itemCountInLine
     }
     
     fileprivate func handleTransitionToNewSize() {
-        self.itemWidth = self.getItemWidth()
-        self.sizingViewWidthConstraint.constant = self.itemWidth
+        self.updateSizingViewConstraint()
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.collectionViewLayout.invalidateLayout()
         }
@@ -162,6 +186,9 @@ extension ProductsCVController: UICollectionViewDelegateFlowLayout {
         let size = sizingView.systemLayoutSizeFitting(desiredSize,
                                                       withHorizontalFittingPriority: .required,
                                                       verticalFittingPriority: .fittingSizeLevel)
+        print("sizingView.size: \(sizingView.frame.size)")
+        print("usedSize: \(size)")
+        print("####################################")
         return size
     }
     

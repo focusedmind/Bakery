@@ -47,7 +47,6 @@
             <constraints>
                 <constraint firstItem="JAQ-5h-y7X" firstAttribute="width" secondItem="JAQ-5h-y7X" secondAttribute="height" multiplier="1:1" id="VW0-XU-w8o"/>
                 <constraint firstItem="JAQ-5h-y7X" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YSx-FK-jCM"/>
-                <constraint firstItem="VIw-Ce-cwG" firstAttribute="height" relation="lessThanOrEqual" secondItem="JAQ-5h-y7X" secondAttribute="height" multiplier="0.7" id="cKM-Lt-hGb"/>
                 <constraint firstItem="Faa-rc-4DR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ngN-at-8dE"/>
                 <constraint firstItem="JAQ-5h-y7X" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="o8w-SP-LKC"/>
                 <constraint firstAttribute="trailing" secondItem="JAQ-5h-y7X" secondAttribute="trailing" id="qWR-wI-yby"/>
