@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zPx-LB-Oqa">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +14,7 @@
             <objects>
                 <navigationController id="zPx-LB-Oqa" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I1E-6i-0f7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -29,11 +30,11 @@
             <objects>
                 <viewController storyboardIdentifier="launchVC" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LaunchViewController" customModule="Bakery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo3" translatesAutoresizingMaskIntoConstraints="NO" id="qOG-Wu-dHU">
-                                <rect key="frame" x="50" y="-256" width="220" height="1080"/>
+                                <rect key="frame" x="50" y="-206.5" width="275" height="1080"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -45,6 +46,7 @@
                             <constraint firstItem="qOG-Wu-dHU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="rp5-XJ-Zug"/>
                             <constraint firstItem="qOG-Wu-dHU" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="50" id="wwn-Iy-klL"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="iMB-HJ-6hO"/>
                     </view>
                     <navigationItem key="navigationItem" id="hEl-Lg-toj"/>
                     <connections>
@@ -60,7 +62,7 @@
             <objects>
                 <collectionViewController storyboardIdentifier="productsCVController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HCr-2j-75l" customClass="ProductsCVController" customModule="Bakery" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" id="de7-0V-V29">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="12" id="0OH-qB-ANT">
@@ -70,15 +72,15 @@
                             <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="X1K-Rk-uGI">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="notUsedProductsCVCell" id="X1K-Rk-uGI">
                                 <rect key="frame" x="16" y="80" width="131" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0dY-3J-quq">
                                     <rect key="frame" x="0.0" y="0.0" width="131" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="film.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AY3-Xe-3FA">
-                                            <rect key="frame" x="0.0" y="1" width="131" height="128.5"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo11" translatesAutoresizingMaskIntoConstraints="NO" id="AY3-Xe-3FA">
+                                            <rect key="frame" x="0.0" y="0.0" width="131" height="131"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="AY3-Xe-3FA" secondAttribute="height" multiplier="1:1" id="7gl-ah-0W1"/>
                                             </constraints>
@@ -89,7 +91,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="131" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1D-G9-wXS">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real cell in XIB" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1D-G9-wXS">
                                                         <rect key="frame" x="16" y="8" width="99" height="28"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <nil key="textColor"/>
@@ -104,7 +106,7 @@
                                                 </constraints>
                                             </view>
                                             <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <blurEffect style="systemMaterial"/>
+                                            <blurEffect style="regular"/>
                                         </visualEffectView>
                                     </subviews>
                                     <constraints>
@@ -126,7 +128,7 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="productsCVHeaderView" id="Pgb-PT-vd4" customClass="ProductsCVHeaderView" customModule="Bakery" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKi-ay-YGA">
@@ -136,7 +138,8 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="yEs-89-uZW">
-                                    <rect key="frame" x="291" y="36" width="13" height="8"/>
+                                    <rect key="frame" x="346" y="36" width="13" height="8"/>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -154,11 +157,11 @@
                             </connections>
                         </collectionReusableView>
                         <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="productsCVFooterReusableView" id="enu-Po-18K" customClass="ProductsCVFooterReusableView" customModule="Bakery" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="255" width="320" height="50"/>
+                            <rect key="frame" x="0.0" y="255" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="6Ed-Cl-eGU">
-                                    <rect key="frame" x="150" y="16" width="20" height="18"/>
+                                    <rect key="frame" x="177.5" y="16" width="20" height="18"/>
                                 </activityIndicatorView>
                             </subviews>
                             <constraints>
@@ -184,7 +187,7 @@
     </scenes>
     <resources>
         <image name="Arrow" width="13" height="8"/>
-        <image name="film.fill" catalog="system" width="128" height="93"/>
+        <image name="logo11" width="900" height="600"/>
         <image name="logo3" width="1920" height="1080"/>
     </resources>
 </document>
